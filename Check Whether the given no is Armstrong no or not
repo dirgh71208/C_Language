@@ -1,0 +1,41 @@
+#include <stdio.h>
+
+int main() {
+    int no, tmp, sum = 0, length = 0, remainder, power, i;
+
+    printf("Enter number to check: ");
+    scanf("%d", &no);
+
+    tmp = no;
+
+    // Step 1: Calculate the number of digits (length)
+    while (tmp != 0) {
+        tmp = tmp / 10;
+        length++;
+    }
+
+    tmp = no; // Reset tmp back to the original number for the next loop
+
+    // Step 2: Extract each digit and calculate the sum
+    while (tmp != 0) {
+        remainder = tmp % 10; // Get the last digit
+        power = 1;
+        
+        // Calculate (remainder ^ length)
+        for (i = 0; i < length; i++) {
+            power = power * remainder;
+        }
+        
+        sum = sum + power; // Add to total sum
+        tmp = tmp / 10;    // Remove the last digit
+    }
+
+    // Step 3: Check if the final sum equals the original number
+    if (sum == no) {
+        printf("%d is an Armstrong number.\n", no);
+    } else {
+        printf("%d is not an Armstrong number.\n", no);
+    }
+
+    return 0;
+}
