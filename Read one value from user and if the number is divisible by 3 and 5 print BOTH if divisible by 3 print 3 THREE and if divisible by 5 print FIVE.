@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+int main() {
+    int num;
+    
+    printf("Enter num 1: ");
+    scanf("%d", &num);
+    
+    if (num % 3 == 0 && num % 5 == 0) {
+        printf("BOTH\n");
+    } 
+    else if (num % 3 == 0) {
+        printf("THREE\n");
+    } 
+    else if (num % 5 == 0) {
+        printf("FIVE\n");
+    } 
+    else {
+        printf("NOT DIVISIBLE BY 3 AND 5\n");
+    }
+    
+    return 0;
+}
