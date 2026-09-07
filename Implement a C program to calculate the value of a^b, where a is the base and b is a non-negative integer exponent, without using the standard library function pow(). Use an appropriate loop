@@ -1,0 +1,13 @@
+#include <stdio.h>
+int main() {
+int i, a, b, result = 1;
+    printf("Enter the value of a: ");
+    scanf("%d", &a);
+    printf("Enter the value of b: ");
+    scanf("%d", &b);
+    for (i = 1; i <= b; i++) {
+        result = result * a;
+    }
+    printf("The answer is: %d\n", result);
+    return 0;
+}
