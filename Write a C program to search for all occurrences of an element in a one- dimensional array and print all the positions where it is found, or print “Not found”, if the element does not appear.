@@ -1,0 +1,43 @@
+#include <stdio.h>
+
+int main() {
+    int n, i, target;
+    int found = 0; // Flag to track if we find at least one match
+
+    // 1. Input the array size
+    printf("Enter the number of elements in the array: ");
+    scanf("%d", &n);
+
+    int arr[n];
+
+    // 2. Input the array elements
+    printf("Enter %d elements:\n", n);
+    for(i = 0; i < n; i++) {
+        scanf("%d", &arr[i]);
+    }
+
+    // 3. Input the element to search for
+    printf("Enter the element to search: ");
+    scanf("%d", &target);
+
+    // 4. Search the array and print all matching indices
+    for(i = 0; i < n; i++) {
+        if(arr[i] == target) {
+            // Print the introductory text only on the first match
+            if(found == 0) {
+                printf("Element found at position(s) [0-based index]: ");
+            }
+            printf("%d ", i);
+            found = 1; // Update flag to indicate a match was found
+        }
+    }
+
+    // 5. Handle the case where the element wasn't in the array
+    if(found == 0) {
+        printf("Not found\n");
+    } else {
+        printf("\n"); // Print a final newline for clean formatting
+    }
+
+    return 0;
+}
